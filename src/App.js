@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import EmployeeProfile from './EmployeeProfile'
 import Toggable from './components/Toggable/Toggable'
+import CheckoutBillingForm from './components/CheckoutBillingForm/CheckoutBillingForm'
 
 class App extends React.Component {
   constructor() {
@@ -67,6 +68,7 @@ class App extends React.Component {
       <div className="App">
         <Toggable>
           <h1>This is my checkout (billing) form</h1>
+          <CheckoutBillingForm></CheckoutBillingForm>
         </Toggable>
       </div>
     );
