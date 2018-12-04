@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import EmployeeProfile from './EmployeeProfile'
+import Card from './Card'
+import Header from './Header'
 
 class App extends React.Component {
   constructor() {
@@ -39,32 +41,34 @@ class App extends React.Component {
       </div>
     );
 
-    
 
-    const ingredients = [
+
+    const movies = [
       {
-        name: "tomato",
+        title: "ghostbusters",
+        director: "abc",
         id: 1234
       },
       {
-        name: "letuce",
+        title: "the goonies",
+        director: "cda",
         id: 2345
       },
       {
-        name: "egg",
-        id: 3456
-      },
-      {
-        name: "peppers",
-        id: 4567
+        title: "la princesa prometida",
+        director: "xxx",
+        id: 7777
       }
     ]
 
-    const ingredientsList = ingredients.map((ingredient, index) => <option key={ingredient.id}>{ingredient.name}</option> );
-
     return (
       <div className="App">
-        <select>{ingredientsList}</select>
+        <Header username="Dani"></Header>
+        <ul>
+          {movies.map((oneMovie, index) =>
+            <Card key={index} title={oneMovie.title} director={oneMovie.director} />)
+          }
+        </ul>
       </div>
     );
   }
