@@ -7,6 +7,14 @@ export default class Card extends React.Component {
     }
 
     render() {
+        let oscarStr;
+
+        if (this.props.hasOscars) {
+            oscarStr = <p>Got the Oscar Award! 😉 </p>
+        }   else {
+            oscarStr = <p>Great movie but no Oscars! 😔 </p>
+        }
+
         return (
             <div>
                 <h1>{this.props.title}</h1>
@@ -15,10 +23,7 @@ export default class Card extends React.Component {
                 <h4>
                 Oscar:
                 {
-                    this.props.hasOscars ?
-                        <p>Got the Oscar Award! 😉 </p>
-                        :
-                        <p>Great movie but no Oscars! 😔 </p>
+                    oscarStr
                 }
                 </h4>
             </div>
