@@ -2,8 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import EmployeeProfile from './EmployeeProfile'
-import Card from './Card'
+import Card from './components/Card/Card'
 import Header from './Header'
+import DynamicMoviesList from './DynamicMoviesList'
 
 class App extends React.Component {
   constructor() {
@@ -47,26 +48,33 @@ class App extends React.Component {
       {
         title: "ghostbusters",
         director: "abc",
-        id: 1234
+        id: 1234,
+        imdbRating: 7.8,
+        hasOscars: true
       },
       {
         title: "the goonies",
         director: "cda",
-        id: 2345
+        id: 2345,
+        imdbRating: 5.8,
+        hasOscars: false
       },
       {
         title: "la princesa prometida",
         director: "xxx",
-        id: 7777
+        id: 7777,
+        imdbRating: 9.8,
+        hasOscars: false
       }
     ]
 
     return (
       <div className="App">
         <Header username="Dani"></Header>
+        {/* <DynamicMoviesList></DynamicMoviesList> */}
         <ul>
           {movies.map((oneMovie, index) =>
-            <Card key={index} title={oneMovie.title} director={oneMovie.director} />)
+            <Card key={index} {...oneMovie} />)
           }
         </ul>
       </div>

@@ -7,7 +7,7 @@ export default class Header extends React.Component {
 
     render() {
         return (
-            <nav>
+            <nav style={{marginBottom: 40}}>
                 Your username is {this.props.username}
             </nav>
         )
