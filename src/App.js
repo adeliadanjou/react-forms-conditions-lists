@@ -20,7 +20,7 @@ class App extends React.Component {
 
   //realistic reducer
   upgradeSalary = (state) => {
-    return {...state, salary: state.salary + 40000}
+    return { ...state, salary: state.salary + 40000 }
   }
 
   changeButtonHandler = () => {
@@ -28,31 +28,43 @@ class App extends React.Component {
   }
 
   changeImageButtonHandler = () => {
-    this.setState({...this.state, img: 'https://m-i9.fnp.com/images/pr/uae/l/i-love-you-flower-arrangement_1.jpg'})
+    this.setState({ ...this.state, img: 'https://m-i9.fnp.com/images/pr/uae/l/i-love-you-flower-arrangement_1.jpg' })
   }
 
   render() {
     const coolSnippet = (
       <div>
-        <h1>Hello Ironhacker! {1+1000}</h1>
+        <h1>Hello Ironhacker! {1 + 1000}</h1>
         <h2>Good to see you here. My nice color is {this.myNiceColor}</h2>
       </div>
     );
 
+    
+
+    const ingredients = [
+      {
+        name: "tomato",
+        id: 1234
+      },
+      {
+        name: "letuce",
+        id: 2345
+      },
+      {
+        name: "egg",
+        id: 3456
+      },
+      {
+        name: "peppers",
+        id: 4567
+      }
+    ]
+
+    const ingredientsList = ingredients.map((ingredient, index) => <option key={ingredient.id}>{ingredient.name}</option> );
+
     return (
       <div className="App">
-        {coolSnippet}
-
-        <EmployeeProfile nombre="javi" age={10}></EmployeeProfile>
-        <EmployeeProfile nombre="luis" age={40}></EmployeeProfile>
-        <EmployeeProfile nombre="devesa" age={35}></EmployeeProfile>
-
-        <header className="App-header">
-          <h1>Hola a todos! {this.state.salary}</h1>
-          <button onClick={this.changeButtonHandler}>Change my state!</button>
-          <button onClick={this.changeImageButtonHandler}>Change my image!</button>
-          <img src={this.state.img} alt=""/>
-        </header>
+        <select>{ingredientsList}</select>
       </div>
     );
   }
