@@ -14,8 +14,8 @@ export default class CheckoutBillingForm extends Component {
 
     updateDetailsHandler = (e) => {
         e.preventDefault();
-        this.setState({ ...this.state, haveDetailsBeenUpdated: true }, function () {
-            console.log(this.state)
+        this.setState({ ...this.state, haveDetailsBeenUpdated: true }, () => {
+            this.props.submitHandler(this.state)
         })
     }
 

@@ -33,6 +33,12 @@ class App extends React.Component {
     this.setState({ ...this.state, img: 'https://m-i9.fnp.com/images/pr/uae/l/i-love-you-flower-arrangement_1.jpg' })
   }
 
+  submitHandler = (state) => {
+    console.log('here goes your axios call!')
+    console.log('passed state is')
+    console.log(state)
+  }
+
   render() {
     const coolSnippet = (
       <div>
@@ -68,7 +74,7 @@ class App extends React.Component {
       <div className="App">
         <Toggable>
           <h1>This is my checkout (billing) form</h1>
-          <CheckoutBillingForm></CheckoutBillingForm>
+          <CheckoutBillingForm submitHandler={this.submitHandler}></CheckoutBillingForm>
         </Toggable>
       </div>
     );
